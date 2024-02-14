@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="login.css">
+  <link rel="stylesheet" href="intex.css">
+</head>
+<body>
+  <nav class="navbar navbar-light bg-light">
+    <div class="container-fluid" id="navbar-container">
+            <a href="Home.html"><img src="imgjob/hero_logo.webp" alt="Logo" width="20%"></a>
+            <a class="nav-link-active" aria-current="page" href="aboutus.html">About Us</a>
+            <a class="nav-link-active" aria-current="page" href="Pricing.html">Pricing</a>
+            <a class="nav-link-active" aria-current="page" href="forstudios.html">For Studios</a>
+            <a class="nav-link-active" aria-current="page" href="features.html">Features</a>
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#scriptModal" id="Create">Create New Script</button>
+            <a class="nav-link-active" aria-current="page" href="blog.html">Blog</a>
+            <a class="nav-link-active" aria-current="page" href="Login.html" id="Log-in">Log in</a>
+    </div>
+  </nav>
+  <div class="hom-container">
+    <div class="hom-container1">
+      <div class="ddd">.</div>
+      <div class="Hero-container">
+        <h1>Unlock <br> the full NOLAN Experience</h1>
+        <div class="login-container">
+          <h1>LOG IN</h1>
+          <a href="google"><div class="border-google"><img src="imgjob/google.png" alt="google" width="5%" height="20px"><span id="imgg">Contiue with Google</span></div></a>
+          <a href="facebook"><div class="border-google"><img src="imgjob/facebook.png" alt="facebook" width="5%" height="20px"><span id="imgg">Contiue with facebook</span></div></a>
+          <a href="login.php"><div class="border-google"><img src="imgjob/gmail.webp" alt="Gmail" width="5%" height="20px"><span id="imgg">Contiue with Email</span></div></a>
+          <a href="#"><div class="border-google" style="text-align: center; background-color: rgb(23, 23, 23); ">Forgot password</div></a>
+          <div class="by" style="color: white; font-size: 13px; margin-top: 10px; text-align: center;">By signing up, you agree to the <a href="Terms of sevice.html">Terms of Service</a> and <a href="privacy policy.html">Privacy Policy.</a></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Modal -->
+  <div class="modal fade" id="scriptModal" tabindex="-1" role="dialog" aria-labelledby="scriptModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="scriptModalLabel">Create a New Script</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body" >
+          <p>Select the format you want to write a script for:</p>
+          <div class="form-check">
+              <input type="radio" name="Feature" id="Feature1" class="form-check-input">
+              <label for="Feature1"><b>Feature Film</b></label>
+              <p>Begin crafting your feature film screenplay with the assistance of Co-Pilot's power.</p>
+          </div>
+          <div class="form-check">
+              <input type="radio" name="Feature" id="Feature2" class="form-check-input">
+              <label for="Feature2"><b>Video shorts</b></label>
+              <p>Take your video shorts to new heights by utilizing AI to craft your scripts in screenplay format.</p>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <footer class="footer bg-dark py-2" style="height: 150px; display: flex;">
+    <div class="text-light d-flex align-items-center justify-content-center flex-grow-1 display: flex;">
+      <p class="text-center m-0"><img src="imgjob/hero_logo.webp" alt="Footer Image" class="img-fluid" width="10%"></p>
+    </div>
+    <div class="container d-flex justify-content-between align-items-center h-100">
+      <div class="text-md-end text-light">
+        Privacy Policy | Terms of Service | Referral Program | Releases
+      </div>
+      <p class="text-center margin-right-100px;">© NolanAI, Inc. 2024</p>
+        <p class="mb-0">
+          <a href="#" class="text-light"><i class="fab fa-instagram"></i> Instagram</a>
+          <a href="#" class="text-light"><i class="fab fa-youtube"></i> YouTube</a>
+          <a href="#" class="text-light"><i>@</i></a>
+          <a href="#" class="text-light"><i>X</i></a>
+        </p>
+      </div>
+    </div>
+  </footer>
+  
+  <script src="script.js"></script>
+  <!-- 
+  <script>
+      // Function to click the button automatically after one second
+      setTimeout(function() {
+          document.getElementById('Create').click();
+      }, 1000); // 1000 milliseconds = 1 second
+  </script> -->
+  <script>
+    alert("detail not provide Google email Facebook not sign up and email option other page login or sign up Sign up page successful database connection login successful other next page dashboard");
+  </script>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  </body>
+  </html>
+  
