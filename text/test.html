@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+//         function test() {
+//             if(true){
+//                 var ti = 30;
+//                 let num =10;
+//                 console.log(`let in if block: ${num}`);
+//              console.log(`var in if block: ${ti}`);
+//             }
+// console.log(`var in funiton Block ${ti}`);
+//         }test();
+//         console.log(`var in outside function: ${ti}`);
+
+        // let num=10;
+        // function print() {
+        //     console.log(`Number is 4 ${num}`);
+
+        // }print()
+        // function  display() {
+        //     var ni = 50;
+        //     console.log(`num is ${num}`);
+
+        // }display()
+
+        // console.log(`Number is ${num}`);
+        // var num=10;
+        // console.log(`number is  ${num}`);
+
+        // //hoisting is not possile with let and const;
+
+        // let test=10;
+        // console.log(`number is ${test}`);
+
+        // print();
+        // function print() {
+        //     console.log(`Test Function Called`);
+            
+        // }
+       //test()// hoisting is bot allowed
+        // const test = function () {
+        //     console.log("Test function called");
+        // }
+        // test();
+        // //if wite exrssion using var keyword then te error is test is obt function 
+        // //you writeusing const thern the error is cannot access test its intialization
+
+
+        function display() {
+            const name="rahul kumar"
+            return function print() {
+                return name;
+            }
+        }
+
+        // const res = display();
+        // const data = res()
+        // console.log(data);
+
+        console.log(display()());
+    </script>
+</body>
+</html>

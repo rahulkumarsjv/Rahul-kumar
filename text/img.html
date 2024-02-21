@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            padding: 20px;
+        }
+
+        #show {
+            width: 300px;
+            height: 300px;
+            border: 1px solid #ccc;
+            background-size: cover;
+            background-position: center;
+            margin-bottom: 20px;
+        }
+
+        #filterButton {
+            padding: 10px;
+            background-color: #333;
+            color: #fff;
+            cursor: pointer;
+        }
+    </style>
+    <title>Image Filter Preview</title>
+</head>
+<body>
+    <input type="file" id="file" onchange="previewImage()">
+    <div id="show"></div>
+    <button id="filterButton" onclick="applyFilter()">Apply Black & White</button>
+
+    <script>
+        function previewImage() {
+            var fileInput = document.getElementById("file");
+            var show = document.getElementById("show");
+            var file = fileInput.files[0];
+
+            if (file) {
+                var reader = new FileReader();
+                reader.onload = function (e) {
+                    show.style.backgroundImage = "url(" + e.target.result + ")";
+                };
+                reader.readAsDataURL(file);
+            }
+        }
+
+        function applyFilter() {
+            var button = document.getElementById("filterButton");
+            var show = document.getElementById("show");
+            show.style.filter = "grayscale(100%)";
+            button.innerHTML = "Download";
+            
+            button.onclick = function () {
+                var link = document.createElement('a');
+                link.download = 'filtered_image.jpg'; // Change the filename as needed
+                link.href = show.style.backgroundImage.replace('url("', '').replace('")', '');
+                link.click();
+            };
+        }
+    </script>
+</body>
+</html>
