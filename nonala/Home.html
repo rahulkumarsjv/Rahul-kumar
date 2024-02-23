@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="intex.css">
+    <style>
+      .form-check {
+          background-color: #5e5d5d; /* Light grey background color */
+          padding: 10px;
+          border-radius: 20px;
+          width: 100%;
+          cursor: pointer;
+      }
+      .form-check:hover {
+          background-color: #a78888;
+           /* Light grey background color on hover */
+      }
+      #Create {
+    background-color: transparent;
+    border: transparent;
+    color: #ffffff; 
+  }
+
+  #Create:hover {
+    color: #fff;
+  }
+      .navbar {
+            background-color: transparent !important;
+            position: fixed;
+            width: 100%;
+            z-index: 2;
+        }
+  </style>
+</head>
+<body>
+  <nav class="navbar navbar-light bg-light">
+    <div class="container-fluid" id="navbar-container">
+            <a href="Home.html"><img src="imgjob/hero_logo.webp" alt="Logo" width="20%"></a>
+            <a class="nav-link-active" aria-current="page" href="aboutus.html">About Us</a>
+            <a class="nav-link-active" aria-current="page" href="Pricing.html">Pricing</a>
+            <a class="nav-link-active" aria-current="page" href="forstudios.html">For Studios</a>
+            <a class="nav-link-active" aria-current="page" href="features.html">Features</a>
+            <button className="btn btn-primary" onClick={handleShow}>
+              Launch demo modal
+            </button>
+            <a class="nav-link-active" aria-current="page" href="blog.html">Blog</a>
+            <a class="nav-link-active" aria-current="page" href="Login.html" id="Log-in">Log in</a>
+    </div>
+  </nav>
+<div class="layout-hom-container">
+    <div class="Hero-homepage">
+        <div class="hero-heropage-logi"><img src="imgjob/hero_logo.webp" alt="Logo"></div>
+        <h1>Film Industry Service Hub</h1><br> 
+        <h2>Helping bring the next masterpiece to the big screens.</h2>
+        <div class="Button_text__ILwkC">
+        <div class="Button_text__ILwkE"><i class="fa fa-pencil" style="font-size:34px; margin-right: 20px;"></i><a href="getnolanaifree">Get NolanAI Free</a></div>
+        <div class="Button_text__login"><i class="fa fa-sign-in" style="font-size:34px; margin-right: 20px;"></i><a href="Login">Login</a></div>
+        </div>
+        <div class="container-3">
+            <div class="editor">
+                <a href="#"><img src="imgjob/stra.png" alt="AI Copilot" width="20%"></a>
+                <h3>Editor with AI-Copilot</h3>
+                <p>Enhance your screenwriting experience with AI Copilot, which suggests ideas for you.</p>
+            </div>
+            <div class="editor">
+                <a href="#"><img src="imgjob/d.png" alt="Automatic Script Breakdown"></a>
+                <h3>Automatic Script Breakdown</h3>
+                <p>Automatic Script Breakdown Script breakdown can be accomplished with a single click.</p>
+            </div>
+            <div class="editor">
+                <a href="#"><img src="imgjob/sim.png" alt="AI Storyboard"></a>
+                <h3>Ai storyboard</h3>
+                <p>AI Storyboard Automatically create shots by analyzing each scene within seconds. Generate shot images for inspiration.</p>
+            </div>
+        </div>
+    </div>
+</div>
+    </div>
+</div>
+<div class="tow-container">
+    <div class="Hero-towpage">
+        <div class="content">
+            <img src="imgjob/shield.webp" alt="img">
+            <div class="text">
+                <h1>Secure</h1>
+                <h3>Don’t worry, your data is secure and encrypted with NOLAN</h3>
+                <p>We take your privacy and the ownership of your work very seriously. We respect 
+                    your creative content and have no rights over it. We do not use your work for training our 
+                    models or for any other purposes without your explicit consent. Your scripts and content remain your intellectual property. So,
+                    when you create/upload or edit content using our software, you retain full ownership of the intellectual property. We do not claim any 
+                    rights to your scripts or any other content you produce. Your creative work is yours and yours alone</p>
+            </div>
+        </div>
+    </div>
+    <div class="thee-container-1">
+        <div class="towcontent">
+            <h3>Free Script Writing Software</h3>
+            <h1>And More</h1>
+            <p>NolanAI isn't just a screenwriting tool, it's a filmmaker's dream studio. From crafting</p>
+            <p>your script with AI assistance to seamlessly pre-producing your masterpiece, all </p>
+            <p>within one intuitive platform, NolanAI empowers you to tell your story without losing your creative spark. </p>
+            <p> Imagine ditching siloed tools and having everything at your fingertips, from</p>
+            <p>storyboards to shot lists, all fueled by AI smarts and user-friendly design. That's the</p>
+            <p>NolanAI advantage - streamlined storytelling, from pen to production, with your</p>
+            <p>unique voice always in the director's chair.</p>
+        </div>
+        <div class="iframeyou">
+            <iframe width="600" height="380" src="https://www.youtube.com/embed/p6P4EDHqAV4" title="How To Use NolanAI" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+        <div class="onebutton"><button>Explore our premium plan!</button></div>
+    </div>
+</div>
+<div class="for-container-4">
+    <div class="forcontent">
+        <h1>Testimonials</h1>
+        <p>What Our Customers Say</p>
+        <div class="Customer_content__deVnA">
+            <img src="imgjob/mike_wech.webp" alt="my photo">
+            <h1>Mike Wech</h1>
+            <h6>PRODUCER • EDITOR • WRITER</h6>
+            <p>NolanAI has the ability to be a game changer for producers. What used to take days could soon take hours and the
+                technology is constantly improving. I was happy that the developers were quick to address the issues and eager to learn how the 
+                program can become more efficient for producers. The incorporated new features that we asked for and are eager 
+                to help filmmakers streamline production. Highly recommended.</p>
+                <a href="#"><img src="imgjob/imdb.png" alt="my photo"></a>
+        </div>
+        <h1>Meet Your Fellow Creators at NolanAI</h1>
+        <p>Fueling the Creative Fire: Where Thousands Shape Their Stories
+        </p>
+    </div>
+    <div class="Optional_count">
+        <div class="Optional_iconWrappe">
+            <img src="imgjob/10000-removebg-preview.png" alt="10000">
+            <h1>+10000</h1>
+            <p>Registered users</p>
+        </div>
+        <div class="Optional_iconWrappe">
+            <img src="imgjob/3000-removebg-preview.png" alt="3000">
+            <h1>+3000</h1>
+            <p>Storyboards created</p>
+        </div>
+        <div class="Optional_iconWrappe">
+            <img src="imgjob/18000-removebg-preview.png" alt="18000">
+            <h1>+18000</h1>
+            <p>Scripts written</p>
+        </div>
+    </div>
+    <div class="FeaturesSection_title__GXUqz">
+    <h1>FEATURES</h1>
+    <p>Explore what the NolanAI platform can do</p>
+    </div>
+    <div class="FeaturesSection_textWrapper__9FMjx">
+        <div class="The">
+            <img src="imgjob/1.png" alt="icon" id="mp1">
+            <h3>The Industry Standard Script Writing Software</h3>
+            <p>Nolan provides a user-friendly interface, advanced formatting options, and helpful features such as character and scene breakdowns, revision tracking, and collaboration tools. With its powerful tools and intuitive design.</p>
+        </div>
+        <div class="Standard1">
+            <img src="imgjob/code.webp" alt="img">
+        </div>
+    </div>
+    <div class="FeaturesSection_textWrapper__9FM">
+        <div class="Standard">
+            <img src="imgjob/plotHole.webp" alt="img">
+        </div>
+        <div class="The1">
+            <img src="imgjob/2.png" alt="icon" id="the2img">
+            <h3>PLOT HOLE DETECTION REPORT</h3>
+            <p>With the Plot Hole Detection Report, you can ensure the consistency and quality of your story, enhancing the overall engagement of your content. This detailed report provides actionable insights and suggestions for resolving identified issues, allowing you to fine-tune your narrative and captivate your audience with a more polished and immersive storytelling experience. Whether you're crafting a screenplay, novel, or any other form of narrative, this feature is your indispensable companion in the pursuit of storytelling excellence.</p>
+        </div>
+    </div>
+        <div class="FeaturesSection_textWrapper__9FMjx">
+            <div class="The">
+                <img src="imgjob/4.png" alt="icon" id="mp1">
+                <h3>ASK NOLAN FOR SUGGESTION</h3>
+                <p>To help you create high-quality story, Nolan offers a powerful editing feature. With Ask Nolan, you can easily enhance the quality of your text by highlighting the selected text,correcting any spelling and grammar errors, and adjusting the tone of the paragraph as necessary.This feature provides you with the flexibility to customize your text and make it more engaging and effective</p>
+            </div>
+            <div class="Standard1">
+                <img src="imgjob/code2.webp" alt="img">
+            </div>
+        </div>
+        <div class="FeaturesSection_textWrapper__9FM">
+            <div class="Standard">
+                <img src="imgjob/plotHole.webp" alt="img">
+            </div>
+            <div class="The1">
+                <img src="imgjob/5.png" alt="icon" id="the2img">
+                <h3>CHANGE YOUR CHARACTER ACCENT</h3>
+                <p>Personalize your character and make it truly unique. "Change Accent" allows you to change your character's accent, making it sound more distinct and authentic. Whether you want to add a touch of personality to your character or create a character that stands out, this feature provides you with the flexibility to customize your character's accent to match your preferences. With this feature, you can create a character that truly represents you and brings your story to life.</p>
+            </div>
+        </div>
+        <div class="FeaturesSection_textWrapper__9FMjx3">
+            <div class="The3">
+                <img src="imgjob/6.png" alt="icon" id="mp1">
+                <h3>SCRIPT SMART</h3>
+                <p>Script Smart uses advanced algorithms to automatically format your text into a screenplay format. With Script Smart, you can save time and focus on writing by letting the software handle the formatting for you. This feature also provides suggestions and corrections to help ensure that your screenplay adheres toindustry standards and is formatted correctly.</p>
+            </div>
+            <div class="Standard1">
+                <img src="imgjob/code2.webp" alt="img">
+            </div>
+        </div>
+        <div class="FeaturesSection_textWrapper__9FM">
+            <div class="Standard">
+                <img src="imgjob/scriptBreakdown.webp" alt="img">
+            </div>
+            <div class="The1">
+                <img src="imgjob/7.png" alt="icon" id="the2img">
+                <h3>BREAK SMART</h3>
+                <p>With the Plot Hole Detection Report, you can ensure the consistency and quality of your story, enhancing the overall engagement of your content. This detailed report provides actionable insights and suggestions for resolving identified issues, allowing you to fine-tune your narrative and captivate your audience with a more polished and immersive storytelling experience. Whether you're crafting a screenplay, novel, or any other form of narrative, this feature is your indispensable companion in the pursuit of storytelling excellence.</p>
+            </div>
+        </div>
+        <center><div class="onebutton"><i class="	fa fa-exchange" style="font-size:24px"></i><a href="#">Explore All Features</a></div></center>
+        </div>
+</div>
+<script src="script.js"></script>
+<!-- Modal -->
+<div class="modal fade" id="scriptModal" tabindex="-1" role="dialog" aria-labelledby="scriptModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="scriptModalLabel">Create a New Script</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      
+  </footer>
+  <script>
+    function handleBorderClick(inputId) {
+  var radioInput = document.getElementById(inputId);
+  radioInput.click();
+}
+
+function handleRadioClick(clickedInputId) {
+  var radioInputs = document.querySelectorAll('input[type="radio"]');
+  radioInputs.forEach(function(input) {
+    if (input.id !== clickedInputId) {
+      input.checked = false;
+    }
+  });
+}
+  </script>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

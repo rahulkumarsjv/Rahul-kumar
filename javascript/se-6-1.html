@@ -7,21 +7,21 @@
 </head>
 <body>
     <script>
-        function fullName (fname, lname) {
-            alert(` Welcome ${fname} ${lname ? lname:''}`);
-        }
-        function add(num1, num2) {
-            alert(` Addition is  ${num1 + num2}`);
-        };
+    //     function fullName (fname, lname) {
+    //         alert(` Welcome ${fname} ${lname ? lname:''}`);
+    //     }
+    //     function add(num1, num2) {
+    //         alert(` Addition is  ${num1 + num2}`);
+    //     };
 
-      fullName ('Rahul','kumar');
-       add (3,4,8,9);
-       fullName ('prince');
-       fullName(prompt ('FirstName'),prompt('last name'));
+    //   fullName ('Rahul','kumar');
+    //    add (3,4,8,9);
+    //    fullName ('prince');
+    //    fullName(prompt ('FirstName'),prompt('last name'));
 
-    function  marrige() {
-        return"gift";
-    }
+    // function  marrige() {
+    //     return"gift";
+    // }
 
     // var result = marrige();
     // alert(result);
@@ -47,6 +47,33 @@
     //         return num1+num2+num3;
     //     }
     //     alert(`Result is ${add(1,2,3)}`)
+
+
+
+
+    // alert("delhi india");
+
+
+    // num1 = 100;
+    // num2 = 200;
+
+    // for(let i=0; i<=10; i++){
+    //     console.log(`1numberse 10 number th ${i}`);
+    // }
+
+    
+    </script>
+    <script>
+      function fullname(fname,lname) {
+        document.write(`<h2> Full Name ${fname} ${lname}</h2>`)
+      }
+      function number(num1,num2) {
+        document.write(`<h3> number to total no ${num1*num2}</h2>`)
+      }
+
+      fullname('Rahul','kumar')
+      number(20,25);
+      fullname(prompt('fname'),prompt('lname'));
     </script>
 </body>
 </html>
