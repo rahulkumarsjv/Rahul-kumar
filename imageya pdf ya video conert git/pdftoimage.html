@@ -23,7 +23,7 @@
      justify-content: center;
      width: 200px;
      height: 50px;
-     opacity: 1;
+     opacity: 0;
     }
     .file{
         border-radius: 20%;
@@ -51,28 +51,28 @@
    }
    #convertBtn{
     position: absolute;
+    top: 10px;
+    left: 16.80%;
+    align-items: center;
+    display: flex;
     justify-content: center;
     width: 200px;
     height: 45px;
-    opacity: 1;
+    opacity: 0;
 
    }
    .bunt{
     display: flex;
-    justify-content: center;
    }
 </style>
 </head>
 <body><div class="bunt">
     <div class="file">Upload</div>
     <div class="file1">Convert to PNG</div>
-    </div>
     <button id="convertBtn">Convert to PNG</button>
     <input type="file" id="fileInput" accept=".pdf, image/*">
+    </div>
     <div id="container"></div>
-    
-
-
     <script>
         document.getElementById('fileInput').addEventListener('change', function(event) {
             var file = event.target.files[0];
