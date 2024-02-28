@@ -301,35 +301,162 @@
             </div>
         </div>
     </div>
-    <div class="modal fade" id="scriptModal" tabindex="-1" role="dialog" aria-labelledby="scriptModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="scriptModalLabel">Create a New Script</h5>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-            <div class="modal-body" >
-              <p>Select the format you want to write a script for:</p>
-              <div class="form-check">
-                  <input type="radio" name="Feature" id="Feature1" class="form-check-input">
-                  <label for="Feature1"><b>Feature Film</b></label>
-                  <p>Begin crafting your feature film screenplay with the assistance of Co-Pilot's power.</p>
+    <button type="button" class="btn btn-primary" id="nextButton1" onclick="openNextModal()">Next for Family Suit</button>
+
+    <button type="button" class="btn btn-primary" id="nextButton2" onclick="openNextModal()">Next for Video Suit</button>
+    
+    <div class="modal" id="exampleModal1" tabindex="-1" role="dialog">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Create a New Script</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <p style="color: #000;">Select the format you want to write a script for:</p>
+            <form>
+              <div class="script-options">
+                <div class="script-option" onclick="handleRadioClick('featureFilm')">
+                  <input type="radio" name="suitType" id="familySuit" class="form-check-input" onclick="enableNextButton()">
+                   <label for="familySuit">Feature Film</label><br />
+                    Begin crafting your feature film screenplay with the assistance of Co-Pilot's power.
+                  </label>
+                </div>
+                <div class="script-option" onclick="handleRadioClick('videoShorts')">
+                  <input type="radio" name="suitType" id="videoSuit" class="form-check-input" onclick="enableNextButton()">
+                   <label for="videoSuit">Video Suit</label>
+                    <b>Video Shorts</b><br />
+                    Take your video shorts to new heights by utilizing AI to craft your scripts in screenplay format.
+                  </label>
+                </div>
               </div>
-              <div class="form-check">
-                  <input type="radio" name="Feature" id="Feature2" class="form-check-input">
-                  <label for="Feature2"><b>Video shorts</b></label>
-                  <p>Take your video shorts to new heights by utilizing AI to craft your scripts in screenplay format.</p>
-              </div>
-            </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button class="btn btn-secondary" onclick="closeModal()">Close</button>
+            <button type="button" class="btn btn-primary" id="nextButton1" onclick="openNextModal()">Next for Family Suit</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+      
+    </script>
+    
+    <!-- Modal for @fat -->
+    <div class="modal" id="exampleModal2" tabindex="-1" role="dialog">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content1">
+          <div class="modal-header">
+            <h5 class="modal-title">Create a New Script</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <form id="scriptForm">
+            <label for="scriptTitle" id="lab">Title:</label><br>
+            <input type="text" id="scriptTitle" name="scriptTitle" placeholder="Untitled Screenplay" id="text12"><br><br>
+            <label for="scriptTitle" id="lab">Title:</label><br>
+            <input type="text" id="scriptTitle" name="scriptTitle" placeholder="Suggest titles based on the synopsis" disabled id="text12"><br><br>
+            <label for="scriptTitle" id="lab">Title:</label><br>
+            <input type="text" id="scriptTitle" name="scriptTitle" placeholder="Synopsis"id="text12"><br><br>
+            
+            <select id="stateSelect" onchange="addSelectedState(this)" id="text12">
+              <option value="">Select a state</option>
+              <option value="Delhi">Delhi</option>
+              <option value="Mumbai">Mumbai</option>
+              <option value="Haryana">Haryana</option>
+              <option value="Kolkata">Kolkata</option>
+              <option value="Bihar">Bihar</option>
+              <option value="Rajasthan">Rajasthan</option>
+              <option value="Punjab">Punjab</option>
+              <!-- Add more options as needed -->
+            </select>
+            <br><br>
+            <input type="text" id="selectedStatesInput" oninput="checkInput()" readonly id="text12">
+            <span id="genreError" style="color: red; display: none;">Genre is Required</span><br><br>
+            <div class="texth4">
+              <h4>Upload a Script</h4>
+              <p>When uploading a PDF file, please ensure that the screenplay is in the industry-standard format. Otherwise, it might be parsed incorrectly.</p>
+              <p style="color: rgb(233, 194, 4);">FDX and PDF script upload are available on <a href="Pricing.html">paid plans.</a></p>
+              <p style="color: rgb(175, 17, 17);">To be able to use the upload functionality, please <a href="Login.html">log in.</a></p>
+            </div><hr><br>
+            <div class="fileuplo">
+              <div class="fileuplo">
+                  <label for="scriptFile1" style=" border-radius: 10%; background-color: rgb(150, 150, 150);">Upload Script 1:</label><br>
+                  <input type="file" id="scriptFile1" name="scriptFile1" style="display: none;  border-radius: 10%; background-color: rgb(150, 150, 150);"  disabled>
+                  <i class="fa fa-file-pdf-o" onclick="uploadFile('scriptFile1')"></i>
+                  <br><br>
+                
+                  <label for="scriptFile2" style=" border-radius: 10%;
+                  background-color: rgb(150, 150, 150);">Upload Script 2:</label><br>
+                  <input type="file" id="scriptFile2" name="scriptFile2" style="display: none;  border-radius: 10%; background-color: rgb(150, 150, 150);" disabled>
+                  <i class="fa fa-file-pdf-o" onclick="uploadFile('scriptFile2')"></i>
+                  <br><br>
+                
+                  <label for="scriptFile3" style=" border-radius: 10%;
+                  background-color: rgb(150, 150, 150);">Upload Script 3:</label><br>
+                  <input type="file" id="scriptFile3" name="scriptFile3" style="display: none;  border-radius: 10%; background-color: rgb(150, 150, 150);" disabled>
+                  <i class="fa fa-file-pdf-o" onclick="uploadFile('scriptFile3')"></i>
+                  <br><br>
+                </div>   
+      </div><br>
+      <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
             <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-              <button type="button" class="btn btn-primary">Save changes</button>
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              <button class="btn btn-primary" onclick="openModal('exampleModal1')">Back</button>
+              <button type="button" class="btn btn-primary" id="nextButton2" onclick="openNextModal()">Next for Video Suit</button>
             </div>
           </div>
         </div>
       </div>
+    </div>
+    
+    <script>
+     
+      </script>
+      <script>
+       
+        
+        </script>
+    <!-- Modal for @getbootstrap -->
+    <div class="modal" id="exampleModal3" tabindex="-1" role="dialog">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Create a new script</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="form-group">
+                <label for="recipient-name" class="col-form-label">Titie</label>
+               <input type="text" id="untitled-video" name="untitled-video" placeholder="Untitled Video Short"><br>
+                </div>
+              <div class="form-group">
+                <label for="recipient-name" class="col-form-label">soial mediaplatform</label>
+                <select id="stateSelect" id="text12;"><br>
+                  <option value="">Select a state</option>
+                  <option value="Delhi">Tik Tok</option>
+                  <option value="Mumbai">Instagram Reel</option>
+                </div><br>
+              <div class="form-group">
+                <textarea class="form-control" id="message-text" placeholder="write a instagram Reel video script about"></textarea>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary" style="font-size: 20px;">Submit <i class="fa fa-share-alt" style="font-size:24px"></i></button>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="model.js"></script>
+    
       <footer class="footer bg-dark py-2" style="height: 150px; display: flex; margin-top: 5500px;">
         <div class="text-light d-flex align-items-center justify-content-center flex-grow-1 display: flex;">
           <p class="text-center m-0"><img src="imgjob/hero_logo.webp" alt="Footer Image" class="img-fluid" width="10%"></p>
