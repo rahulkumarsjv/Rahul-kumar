@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Image Tax Display</title>
+</head>
+<body>
+<h2>Upload Image:</h2>
+<input type="file" id="imageInput" accept="image/*">
+<button onclick="displayTaxes()">Display Taxes</button>
+<p id="taxDisplay"></p>
+<img src="https://platinumlist.net/guide/wp-content/uploads/2023/03/IMG-worlds-of-adventure.webp" alt="">
+
+<script>
+function displayTaxes() {
+    var fileInput = document.getElementById('imageInput');
+    var file = fileInput.files[0];
+    
+    // Check if a file is selected
+    if (file) {
+        var fileName = file.name;
+        var tax = getTaxForImage(fileName);
+
+        if (tax !== null) {
+            var taxDisplay = document.getElementById('taxDisplay');
+            taxDisplay.textContent = 'Tax: ' + tax;
+        } else {
+            alert('Tax information not found for this image.');
+        }
+    } else {
+        alert('Please select an image file.');
+    }
+}
+
+function getTaxForImage(fileName) {
+    // Define image-to-tax mappings
+    var imageTaxMap = {
+        "chai.jpg": 10,
+        "coffee.jpg": 15,
+        "tea.jpg": 20
+        // Add more mappings as needed
+    };
+
+    // Check if the image file name exists in the mapping
+    if (imageTaxMap.hasOwnProperty(fileName)) {
+        return imageTaxMap[fileName];
+    } else {
+        return null;
+    }
+}
+</script>
+</body>
+</html>

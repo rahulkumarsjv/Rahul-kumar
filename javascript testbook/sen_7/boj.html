@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table>
+        <tr>
+            <th>id </th>
+            <th> name </th>
+            <th> Cgpa </th>
+        </tr>
+        <tr>
+            <td>549</td>
+            <td>Rahul kumar</td>
+            <td>6.0</td>
+        </tr>
+        <tr>
+            <td>458</td>
+            <td>prince kumar</td>
+            <td>8.5</td>
+        </tr>
+    <tbody id="data"></tbody>
+    </table>
+    <script>
+        const tbody = document.querySelector('data');
+        let html ='';
+        for(let stu of students){
+            html+='<tr>'; 
+
+                for(let key in obj){
+                    html+= `<td> ${obj[key]}</td>`
+                }
+                html+=`</tr>`
+        }
+        tbody.innerHTML=html;
+            </script>
+
+</body>
+</html>

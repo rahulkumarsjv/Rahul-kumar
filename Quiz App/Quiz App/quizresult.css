@@ -1,0 +1,60 @@
+/* Center the content vertically and horizontally */
+body {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    height: 100vh;
+    margin: 0; 
+}
+
+/* Style for the container */
+.filex {
+    border-image: url(img/trippy-color.gif) 30 round; /* Apply border image to the container */
+    border-width: 15px; /* Set border width */
+    border-style: solid; /* Set border style */
+    width: 500px;
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+/* Style for paragraphs inside the container */
+.filex p {
+    margin: 5px 0;
+    font-size: 18px;
+}
+
+/* Style for headings inside the container */
+#vvvvv h3 {
+    font-size: 30px;
+    font-weight: bold;
+    color: rgb(79, 85, 246);
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+/* Style for buttons */
+button {
+    border-radius: 10%;
+    background-color: blue;
+    width: 100px;
+    height: 40px;
+    margin: 30px;   
+    position: relative;
+    cursor: pointer;
+}
+
+/* Style for links inside buttons */
+button a {
+    position: absolute;
+    top: 10px;
+    left: 8px;
+    text-decoration: none;
+    color: white;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}

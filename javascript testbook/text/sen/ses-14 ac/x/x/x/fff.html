@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photoshop 7.0 Website</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Welcome to Our Website</h1>
+    </header>
+    <main>
+        <input type="file" id="fileInput" accept="image/*">
+        <div id="imageContainer">
+            <img id="uploadedImage" src="#" alt="Uploaded Image">
+        </div>
+        <div id="buttons">
+            <button id="button1">Munde Cut</button>
+            <button id="button2">Hath Cut</button>
+            <button id="button3">Dusra Hath Cut</button>
+            <button id="button4">Tang Cut</button>
+        </div>
+    </main>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+    const fileInput = document.getElementById("fileInput");
+    const imageContainer = document.getElementById("imageContainer");
+    const uploadedImage = document.getElementById("uploadedImage");
+    const buttons = document.getElementById("buttons");
+
+    fileInput.addEventListener("change", function() {
+        const file = this.files[0];
+        const reader = new FileReader();
+
+        reader.onload = function(e) {
+            uploadedImage.src = e.target.result;
+        }
+
+        reader.readAsDataURL(file);
+    });
+
+    function resetImage() {
+        uploadedImage.src = "#";
+    }
+
+    function mundeCut() {
+        // Implement munde cut functionality here
+    }
+
+    function hathCut() {
+        // Implement hath cut functionality here
+    }
+
+    function dusraHathCut() {
+        // Implement dusra hath cut functionality here
+    }
+
+    function tangCut() {
+        // Implement tang cut functionality here
+    }
+
+    document.getElementById("button1").addEventListener("click", mundeCut);
+    document.getElementById("button2").addEventListener("click", hathCut);
+    document.getElementById("button3").addEventListener("click", dusraHathCut);
+    document.getElementById("button4").addEventListener("click", tangCut);
+});
+
+    </script>
+</body>
+</html>

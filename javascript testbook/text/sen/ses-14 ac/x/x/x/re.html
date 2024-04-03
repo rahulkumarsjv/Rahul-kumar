@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="apiData()">api details</button>
+    <div id="details"></div>
+    <script>
+        async function apiData() {
+            try{
+                const api = await fetch('https://jsonplaceholder.typicode.com/users/1');
+                const json = await api.json();
+                document.querySelector('#details').innerHTML=
+                `<h2> welcome ${json.name}</h2><hr>
+                <ul>
+                    <li>userName: ${json.username}</li>
+                    <li>userName: ${json.email}</li>
+                    <li>userName: ${json.website}</li>
+                    <li>userName: ${json.phone}</li>
+                    <li>userName: ${json.company.name}${json.company.catchphrase}</li>`
+
+            }catch(error){
+                console.log(error);
+            }
+        }
+    </script>
+</body>
+</html>

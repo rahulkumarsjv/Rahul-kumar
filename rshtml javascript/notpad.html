@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Custom Text Editor</title>
+<style>
+/* CSS styles go here */
+body {
+  font-family: Arial, sans-serif;
+}
+textarea {
+  width: 100%;
+  height: 300px;
+  margin-bottom: 10px;
+}
+#output {
+  border: 1px solid #ccc;
+  padding: 10px;
+}
+</style>
+</head>
+<body>
+<h1>Custom Text Editor</h1>
+<textarea id="code" placeholder="Enter your HTML, CSS, or JavaScript code here"></textarea>
+<button onclick="runCode()">Run</button>
+<button onclick="runInConsole()">Console</button>
+<div id="output"></div>
+<input type="file">
+<script>
+// JavaScript code goes here
+function runCode() {
+  var code = document.getElementById("code").value;
+  var output = document.getElementById("output");
+  output.innerHTML = code;
+}
+
+function runInConsole() {
+  var code = document.getElementById("code").value;
+}
+</script>
+</body>
+</html>

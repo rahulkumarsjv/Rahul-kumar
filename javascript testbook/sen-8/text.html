@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .parent-container {
+            position: relative;
+            width: 100vw;
+            height: 100vh;
+        }
+
+        .container {
+            box-sizing: border-box;
+            border-radius: 30px;
+            width: 400px;
+            height: 400px;
+            background-color: #cccccc;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        
+        .container input {
+            width: 80%;
+            height: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: auto;
+        }
+        
+        .container h1{
+            margin-top: 50px;
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .container p{
+            text-align: center;
+            font-size: 20px;
+            margin-top: 30px;
+            color: black;
+        }
+        
+        .container a{
+            text-decoration: none;
+            color: rgb(213, 11, 196);
+        }
+        
+        button{
+            background-color: black;
+            color: white;
+            width: 80%;
+            height: 30px;
+            margin-left: 40px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Login</h1>
+        <form id="loginForm">
+            <input type="email" name="email" id="email" placeholder="Email"><br>
+            <input type="password" name="password" id="password" placeholder="Password"><br>
+            <button type="submit">Submit</button>
+        </form>
+        <p>Don't have an account? <a href="su.html">Sign up</a></p>
+    </div>
+
+    <script>
+        var loginForm = document.getElementById("loginForm");
+
+        loginForm.addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            var email = document.getElementById("email").value;
+            var password = document.getElementById("password").value;
+
+            // Retrieve user data from localStorage
+            var userData = JSON.parse(localStorage.getItem(email));
+
+            if(userData && userData.password === password) {
+                alert("Login successful!");
+                // You can redirect the user to another page or perform any other action here
+            } else {
+                alert("Invalid email or password. Please try again.");
+            }
+        });
+    </script>
+</body>
+</html>

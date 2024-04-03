@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Holi</title>
+<style>
+body, html {
+  height: 100%;
+  margin: 0;
+}
+
+#body1 {
+  background-image: url('https://i.gifer.com/80qW.gif');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  flex-direction: column;
+}
+
+.line {
+  display: flex;
+  align-items: center;
+}
+
+.name {
+  font-size: 5em;
+  color: rgb(81, 253, 8);
+  background-size: cover;
+  -webkit-background-clip: text;
+  animation: animate 14s linear infinite;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.test5 {
+ text-align: center;
+ font-size: 50px;
+ color: aliceblue;
+}
+
+@keyframes animate {
+  0% {
+    background-position: left 0px top 0x;
+  }
+  40% {
+    background-position: left 900px top 0px;
+  }
+}
+
+.show {
+  opacity: 1;
+}
+
+@media (max-width: 768px) {
+  #body1 {
+    background-size: 100% 100%;
+    object-fit: cover;
+  }
+  .name {
+  font-size: 2em;
+  color: rgb(253, 8, 12);
+  position: absolute;
+  top: 100px;
+  left: 20px;
+}
+}
+</style>
+</head>
+<body id="body1">
+  <div class="test5">Happy Holi <br> Tastbook Member Batch Number 14</div>
+  <div class="container">
+    <div class="line">
+      <div class="name" id="name1">ASMA</div>
+    </div>
+    <div class="line">
+      <div class="name" id="name2">KUNDAN KUMAR</div>
+    </div>
+    <div class="line">
+      <div class="name" id="name2">RAHUL KUMAR</div>
+    </div>
+    <div class="line">
+      <div class="name" id="name3">PRIYA SENGAR</div>
+    </div>
+    <div class="line">
+      <div class="name" id="name4">PRINCE KUMAR</div>
+    </div>
+    <div class="line">
+      <div class="name" id="name5">SANDEEP</div>
+    </div>
+  </div>
+<script>
+document.addEventListener("DOMContentLoaded", function(event) { 
+  var elements = document.querySelectorAll('.name, .test5');
+  var names = Array.from(elements).map(element => element.textContent.trim()); // Extract names
+  var index = 0;
+  var utterance = new SpeechSynthesisUtterance();
+  utterance.lang = 'en-US';
+  utterance.volume = 1; // adjust volume if needed
+  
+  // Adjust pitch and rate for a different sounding voice
+  utterance.pitch = 0.5; // Lower values for a deeper voice
+  utterance.rate = 0.8; // Adjust rate as needed
+
+  setInterval(function() {
+    utterance.text = names.join(". "); // Set the text to all names
+    speechSynthesis.speak(utterance); // Speak all names
+  }, 5000); // Repeat every 5 seconds
+
+  // Speak individual names one by one
+  setInterval(function() {
+    elements[index].classList.remove('show');
+    index = (index + 1) % elements.length;
+    elements[index].classList.add('show');
+    utterance.text = elements[index].textContent.trim(); // set the text to be spoken
+    speechSynthesis.speak(utterance); // speak the text
+
+    // Check if it's the position of the skipped names and repeat them
+    if (names[index] === "Rahul Kumar" || names[index] === "Prince Kumar") {
+      speechSynthesis.speak(utterance); // speak the skipped name again
+    }
+  }, 1000); // Change the interval to 1000 milliseconds for one name per second
+});
+</script>
+</body>
+</html>
