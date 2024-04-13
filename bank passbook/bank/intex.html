@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bank passbook</title>
+    <link rel="stylesheet" href="intex.css">
+</head>
+<body>
+    <div class="container">
+        <div class="punjab123"><h1>Punjab National Bank</h1></div>
+        <div class="account">
+            <h3 id="h3">Punjab National Bank front page passbook</h3>
+        </div>
+        <div class="account-datas">
+            <p id="fullname">Mr : Full name
+                <input type="text" name="name" id="name">
+                <span id="father">Father Name
+                <input type="text" name="fatherName" id="fatherName"></span>
+            </p>
+            <p id="motherName">Ms : Mother Name
+                <input type="text" name="motherName" id="motherName">
+                <span id="imcr"> MICR Code : 
+                <input type="text" name="text" id="micr"></span>
+            </p>
+            <p id="branch1">branch code 
+                <input type="text" name="text" id="text">
+                <span id="ifscCode">Ifsc Code 
+                <input type="text" name="text" id="ifsc"></span>
+            </p>
+            <p id="customer">Customer No.:
+                <input type="text" name="number" id="customerNo">
+                <span id="Account">Account No : 
+                <input type="number" name="number" id="accountNo">IN</span>
+            </p>
+            <p id="address1">address 
+                <input type="text" id="address" name="text">
+                <span id="branchAddress1">branch address 
+                <input type="text" id="branchAddress" name="text"></span>
+            </p>
+            <p id="mobileno"> Mobile Number
+                <input type="number" id="mobilenumber" name="text">
+            <span id="dateofissue">Date of Issue 
+                <input type="text" id="DateofIssue" name="text"></span>
+            </p>
+        </div>
+        <button onclick="displayDetails()" id="btn">Display Details</button>
+    </div>
+     <script>
+   function displayDetails() {
+    var name = document.getElementById('name').value;
+    var fatherName = document.getElementById('fatherName').value;
+    var motherName = document.getElementById('motherName').value;
+    var micr = document.getElementById('micr').value;
+    var ifsc = document.getElementById('ifsc').value;
+    var customerNo = document.getElementById('customerNo').value;
+    var accountNo = document.getElementById('accountNo').value;
+    var address = document.getElementById('address').value;
+    var branchAddress = document.getElementById('branchAddress').value;
+    var mobileNumber = document.getElementById('mobilenumber').value;
+    var dateOfIssue = document.getElementById('DateofIssue').value;
+    var branchCode = document.getElementById('text').value; // Assuming the input for branch code has id 'text'
+
+    var queryParams = `bankpassbookpnb.html?name=${name}&fatherName=${fatherName}&motherName=${motherName}&micr=${micr}&ifsc=${ifsc}&customerNo=${customerNo}&accountNo=${accountNo}&address=${address}&branchAddress=${branchAddress}&mobileNumber=${mobileNumber}&dateOfIssue=${dateOfIssue}&branchCode=${branchCode}`;
+
+    // Redirect to the second page with all the data
+    window.location.href = queryParams; // Only the query parameters, not the entire URL
+}
+
+</script>
