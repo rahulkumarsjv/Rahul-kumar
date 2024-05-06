@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Video Upload Preview with Trimming</title>
+  <link rel="stylesheet" href="index.css">
+</head>
+<body>
+  <input type="file" id="videoInput" accept="video/*">
+  <div id="uploadMessage" style="display: none;">Video uploaded successfully!</div>
+  <div id="previewContainer">
+    <video id="videoPreview" controls></video>
+  </div>
+  <div id="speedControl">
+    <label for="speedRange">Speed: </label>
+    <input type="range" id="speedRange" min="0.1" max="2" step="0.1" value="1">
+    <span id="speedValue">1x</span>
+  </div>
+  <div id="statusControl">
+    <label for="statusSelect">Video Status: </label>
+    <select id="statusSelect">
+      <option value="normal">Normal</option>
+      <option value="slow">Slow</option>
+      <option value="fast">Fast</option>
+    </select>
+  </div>
+  <div id="trimControls">
+    <label for="trimStart">Start Time (seconds):</label>
+    <input type="number" id="trimStart" min="0" step="0.1" value="0">
+    <label for="trimEnd">End Time (seconds):</label>
+    <input type="number" id="trimEnd" min="0" step="0.1" value="0">
+    <button id="trimVideo">Trim Video</button>
+  </div>
+
+  <script src="index.js"></script>
+</body>
+</html>

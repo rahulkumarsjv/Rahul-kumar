@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="c">
+    <p id="ch">delhi india</p>
+    <button onclick="run()">button</button>
+</div>
+<div class="image change">
+    <img src="https://miro.medium.com/v2/resize:fit:960/1*OlyP02fRFe8pEkJgb6vGTQ.png" width="30%" height="300px" onclick="change()" id="image"><br>
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ3ADXhmzpdgf8hyALFHERq-lxM-rbzqLXu0t_K9TLHLQ&s" width="10%" onclick="change()">
+</div>
+<script>
+    function run() {
+        var text = document.getElementById("ch");
+        text.innerHTML="india2";
+        text.style.color="red";
+    }
+     
+    // window.alert("delhi");
+    // alert("india");
+    function change(img){
+   var image = document.getElementById("image");
+   image.src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ3ADXhmzpdgf8hyALFHERq-lxM-rbzqLXu0t_K9TLHLQ&s";
+    }
+</script>
+</body>
+</html>

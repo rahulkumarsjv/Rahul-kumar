@@ -6,7 +6,7 @@ const questions = [
     {
         question: "What is the capital city of Mumbai Colaba?",
         answers: ["400001", "400005", "400007", "400021"],
-        correctAnswer: "400001"
+        correctAnswer: "400005"
     },
     {
         question: "What is the capital city of Mumbai Bandra?",

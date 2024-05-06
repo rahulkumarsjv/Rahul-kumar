@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Upload to Google Drive</title>
+    <!-- Google Drive API Script -->
+    <script src="https://apis.google.com/js/api.js"></script>
+</head>
+<body>
+    <h1>Video Upload to Google Drive</h1>
+    
+    <!-- Video Upload Form -->
+    <form id="uploadForm">
+        <input type="file" id="videoInput" accept="video/*">
+        <button type="submit">Upload Video</button>
+    </form>
+    
+    <!-- Display Uploaded Video Link -->
+    <p id="videoLink"></p>
+
+    <script>
+        // Google Drive API client ID
+        const CLIENT_ID = '513048176418-lgqnsgublsbbm6elggm3n0prscv5pm1h.apps.googleusercontent.com';
+
+        // Function to authenticate user
+        function authenticate() {
+            return gapi.auth2.getAuthInstance()
+                .signIn({ scope: 'https://www.googleapis.com/auth/drive.file' })
+                .then(() => console.log('User signed in.'));
+        }
+
+        // Function to load client library
+        function loadClient() {
+            gapi.client.setApiKey('513048176418-lgqnsgublsbbm6elggm3n0prscv5pm1h.apps.googleusercontent.com');
+            return gapi.client.load('513048176418-lgqnsgublsbbm6elggm3n0prscv5pm1h.apps.googleusercontent.com')
+                .then(() => console.log('GAPI client loaded for API'));
+        }
+
+        // Function to handle form submission
+        function handleFormSubmit(event) {
+            event.preventDefault();
+            const file = document.getElementById('videoInput').files[0];
+            uploadFile(file);
+        }
+
+        // Function to upload file to Google Drive
+        function uploadFile(file) {
+            const metadata = {
+                'name': file.name,
+                'mimeType': file.type
+            };
+            const accessToken = gapi.auth2.getAuthInstance().currentUser.get().getAuthResponse().access_token;
+            const form = new FormData();
+            form.append('metadata', new Blob([JSON.stringify(metadata)], { type: 'application/json' }));
+            form.append('file', file);
+
+            fetch('https://www.googleapis.com/upload/drive/v3/files?uploadType=multipart&fields=id', {
+                method: 'POST',
+                headers: new Headers({ 'Authorization': 'Bearer ' + accessToken }),
+                body: form,
+            })
+            .then(response => response.json())
+            .then(data => {
+                const fileId = data.id;
+                const videoLink = `https://drive.google.com/file/d/${fileId}/view`;
+                document.getElementById('videoLink').innerHTML = `Uploaded Video Link: <a href="${videoLink}" target="_blank">${videoLink}</a>`;
+            })
+            .catch(error => console.error('Error uploading file:', error));
+        }
+
+        // Initialize Google Drive API client
+        gapi.load('client:auth2', async () => {
+            try {
+                await gapi.client.init({
+                    apiKey: 'YOUR_API_KEY',
+                    clientId: CLIENT_ID,
+                    discoveryDocs: ["https://www.googleapis.com/discovery/v1/apis/drive/v3/rest"],
+                    scope: 'https://www.googleapis.com/auth/drive.file'
+                });
+            } catch (error) {
+                console.error('Error loading GAPI client for API:', error);
+            }
+        });
+
+        // Event listener for form submission
+        document.getElementById('uploadForm').addEventListener('submit', handleFormSubmit);
+    </script>
+</body>
+</html>

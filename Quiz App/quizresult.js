@@ -23,7 +23,7 @@ for (let i = 0; i < attemptedQuestions; i++) {
 let totalTime = 0;
 if (questionTimes.length > 0) {
     totalTime = questionTimes.reduce((total, time) => total + time, 0);
-}
+}   
 
 // Update HTML elements with the retrieved data
 document.getElementById('totalTime').textContent = totalTime.toFixed(2) + " seconds";

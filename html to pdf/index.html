@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <title>Document</title>
+    <style>
+        .htmltopdf{
+            font-size: 30px;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        }
+    </style>
+</head>
+<body>
+   <div class="lor">
+    <div class="htmltopdf">
+        <h1>HTML TO PDF jo bhi code karo usko direct aap ek click Mein PDF Mein download kar sakte ho</h1>
+    </div>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora facere ut, enim cum eaque itaque voluptate non repellat eos, amet quod ex similique inventore vel est, excepturi minima? Esse, optio!<br>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora facere ut, enim cum eaque itaque voluptate non repellat eos, amet quod ex similique inventore vel est, excepturi minima? Esse, optio!<br>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora facere ut, enim cum eaque itaque voluptate non repellat eos, amet quod ex similique inventore vel est, excepturi minima? Esse, optio!</p>
+    <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae aliquam rem distinctio omnis veritatis ad quisquam ducimus accusamus! Sit exercitationem commodi alias quasi tempora sequi saepe porro assumenda optio sint.</h3>
+   </div> 
+   <button class="btn">button</button>
+   <script>
+    let div = document.querySelector(".lor");
+    let btn = document.querySelector(".btn");
+    btn.addEventListener('click',()=>{
+        html2pdf().from(div).save()
+    })
+   </script>
+</body>
+</html>

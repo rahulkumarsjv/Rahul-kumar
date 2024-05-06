@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>pnb bank passbook</title>
+    <link rel="stylesheet" href="bankpassbook.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="pnbbankaa">
+            <p class="linkadharE">
+                <b>Link Your Adhar Number with SB Account.<br>Submit self Certified copy of Aadhar and Mobile Number.</b>
+            </p>
+        </div>
+        <div class="pnb1frontpage">
+            <div class="bank23">
+                <h1>पंजाब नैशनल बैंक <img src="img/pnbbank log.png" alt="PNB Logo">punjab national bank</h1>
+            </div>
+            <div class="leftside">
+                <div class="head">
+                    <p id="pos">00NARELA, CIVIL LINE (DELHI)</p>
+                    <h3 id="account55">खाता विवरण / ACCOUNT PARTICULARS</h3>
+                </div>
+                <div class="bankcode">
+                    <p id="center">MICR Code: <span id="micrCode"></span></p>
+                    <p id="center">IFSC Code: <span id="ifscCode"></span></p>
+                </div>
+                <div class="personal">
+                    <p id="mode23">Mode of operation : Any Two Jointly</p><br>
+                    <p>Full Name: <span id="fullName"></span></p>
+                    <p>Customer Number: <span id="customerNo"></span></p>
+                    <p>Account Number: <span id="accountNo"></span></p>
+                    <p>Father's Name: <span id="fatherName"></span></p>
+                    <p>Mobile Number: <span id="mobileNumber"></span></p>
+                    <p>Branch Code: <span id="branchCode"></span></p>
+                    <p>Address: <span id="address"></span></p>
+                    <p>Branch Address: <span id="branchAddress"></span></p>
+                    <p>Nomination not registered</p>
+                    <p>Date of Issue: <span id="dateOfIssue"></span></p>
+                </div>
+                <div class="banksh">
+                    <p>प्राधिकारी अधिकारी / प्रबंधक / Authorised Official / Manager
+                        कम्प्यूटर द्वारा सृजित विवरणियों पर किसी अधिकारी द्वारा अधिप्रमाणित
+                        करने / आद्याक्षर करने की आवश्यकता नहीं है। कृपया कम्प्यूटर द्वारा सृजित
+                        पासबुक/ विवरणी पर हस्तलिखित (मैनुअल) प्रविष्टयां स्वीकार न करें।</p>
+                </div>
+            </div>
+        </div>
+        <p id="callme">call center tool free no: 18001802222 tolled no: 0120-2490000<br>principal nodal officer : telephone no. 011-23716185 Fax no 01202303090<br>CIVIL LINES, NARELA - 110040 ( phone no 011-27282186, 27282187)</p>
+        <p class="linkadharH">
+            <b>बचत बैंक खाते के साथ अपने आधार नंबर को जोड़े।<br>आधार नंबर की स्वप्रमाणित प्रति एवम् मोबाइल नंबर प्रस्तुत  करे।</b>
+        </p>
+        <div class="pnb2frontpage">
+            <div class="pnbbankimage">
+                <img src="img/pnbbank1.png" alt="">
+            </div>
+        </div>
+        <button onclick="takeScreenshot()">Download</button>
+    </div>
+    <div class="container">
+        <img width="100%" class="screen">
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.5.0-beta4/html2canvas.min.js" async></script>
+    <script>
+        window.onload = function() {
+            // Retrieve parameters from URL
+            var urlParams = new URLSearchParams(window.location.search);
+            var name = urlParams.get('name');
+            var fatherName = urlParams.get('fatherName');
+            var micr = urlParams.get('micr');
+            var ifsc = urlParams.get('ifsc');
+            var customerNo = urlParams.get('customerNo');
+            var accountNo = urlParams.get('accountNo');
+            var address = urlParams.get('address');
+            var branchAddress = urlParams.get('branchAddress');
+            var mobileNumber = urlParams.get('mobileNumber');
+            var dateOfIssue = urlParams.get('dateOfIssue');
+            var branchCode = urlParams.get('branchCode');
+
+            // Populate fields with retrieved values
+            document.getElementById("fullName").innerText = name;
+            document.getElementById("fatherName").innerText = fatherName;
+            document.getElementById("micrCode").innerText = micr;
+            document.getElementById("ifscCode").innerText = ifsc;
+            document.getElementById("customerNo").innerText = customerNo;
+            document.getElementById("accountNo").innerText = accountNo;
+            document.getElementById("address").innerText = address;
+            document.getElementById("branchAddress").innerText = branchAddress;
+            document.getElementById("mobileNumber").innerText = mobileNumber;
+            document.getElementById("dateOfIssue").innerText = dateOfIssue;
+            document.getElementById("branchCode").innerText = branchCode;
+        }
+        function takeScreenshot() {
+            console.log("Taking screenshot...");
+            document.querySelector("button").style.display = "none";
+            let region = document.body;
+            html2canvas(region, {
+                x: 0,
+                y: 0,
+                width: window.innerWidth,
+                height: window.innerHeight - document.querySelector("button").offsetHeight
+            }).then(function(canvas) {
+                var link = document.createElement("a");
+                link.download = "screenshot.png";
+                link.href = canvas.toDataURL("image/png");
+                link.click();
+                console.log("Screenshot taken and downloaded successfully!");
+                document.querySelector("button").style.display = "block";
+            }).catch(function(error) {
+                console.error("Error occurred during screenshot:", error);
+                document.querySelector("button").style.display = "block";
+            });
+        }
+    </script>
+</body>
+</html>

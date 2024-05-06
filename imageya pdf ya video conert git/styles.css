@@ -90,3 +90,20 @@ body {
     background-color: aqua;
     color: rgb(4, 52, 88);
   }
+  .navbar{
+    border: solid black 1px;
+    background-color: black;
+    width: 100%;
+   height: 50px;
+   justify-self: center;
+   align-items: center;
+   display: flex;
+   margin-bottom: 2%;
+}
+.navbar a{
+   color: #fff;
+   margin-left: 5%;
+   font-size: 30px;
+   justify-content: space-between;
+   text-decoration: none;
+}

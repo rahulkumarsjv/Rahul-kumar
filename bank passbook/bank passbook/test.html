@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            margin-top: 10px;
+            border: solid 1px black;
+        }
+    </style>
+</head>
+<body>
+    <div>Screenshot</div>
+
+    <button onclick="takeScreenshot()">Take screenshot</button>
+
+    <div class="container">
+        <img width="100%" class="screen">
+    </div>
+
+    <script>
+        function takeScreenshot() {
+            console.log("Taking screenshot...");
+            // Hide the button
+            document.querySelector("button").style.display = "none";
+
+            // Capture the visible area excluding the button
+            let region = document.body;
+            html2canvas(region, {
+                x: 0,
+                y: 0,
+                width: window.innerWidth,
+                height: window.innerHeight - document.querySelector("button").offsetHeight
+            }).then(function(canvas) {
+                // Creating an anchor element to trigger download
+                var link = document.createElement("a");
+                link.download = "screenshot.png";
+                link.href = canvas.toDataURL("image/png");
+                link.click();
+                console.log("Screenshot taken and downloaded successfully!");
+                // Show the button again after taking the screenshot
+                document.querySelector("button").style.display = "block";
+            }).catch(function(error) {
+                console.error("Error occurred during screenshot:", error);
+                // Show the button again if there's an error
+                document.querySelector("button").style.display = "block";
+            });
+        }
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.5.0-beta4/html2canvas.min.js" async></script>
+</body>
+</html>

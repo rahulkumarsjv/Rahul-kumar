@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pricing</title>
+    <style>
+         .Plan_tabName__D3vNM {
+            cursor: pointer;
+            padding: 10px;
+            margin: 5px;
+            border: 1px solid #ccc;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="layout-hom-container">
+        <div class="Hero-homepage">
+            <p style="margin-top: 7%;">NOLAN <span style="color: white;">PRICING</span></p>
+            <h2>Pricing</h2>
+            <div class="Plan_head__36_4X">
+                <div class="Plan_headWrapper__i8Frk">
+                    <div class="Plan_tabItem__OTxE0">
+                        <div class="Plan_tabItemWrapper__z0hw7 Plan_selected__IFoBZ">
+                            <div class="Plan_tabName__D3vNM" onclick="changeTab('monthly')" id="monthly">Monthly</div>
+                        </div>
+                    </div>
+                    <div class="Plan_tabItem__OTxE0">
+                        <div class="Plan_tabItemWrapper__z0hw7">
+                            <div class="Plan_tabName__D3vNM" onclick="changeTab('every')" id="every">Every 3 months</div>
+                        </div>
+                    </div>
+                    <div class="Plan_tabItem__OTxE0">
+                        <div class="Plan_tabItemWrapper__z0hw7">
+                            <div class="Plan_tabName__D3vNM" onclick="changeTab('annually')" id="annually">Annually</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="test">
+        <h1 id="first">$0</h1>
+    </div>
+    <div class="test">
+        <h1 id="seconds">$29.99</h1>
+    </div>
+    <div class="test">
+        <h1 id="third">$39.99</h1>
+    </div>
+
+    <script>
+       function changeTab(tabId) {
+            // Reset background color for all tabs
+            var tabs = document.querySelectorAll('.Plan_tabName__D3vNM');
+            tabs.forEach(function(tab) {
+                tab.style.backgroundColor = '';
+                tab.style.color="#fff";
+            });
+
+            // Set background color for the clicked tab
+            var clickedTab = document.getElementById(tabId);
+            clickedTab.style.backgroundColor = 'black';
+
+            // Call the corresponding function (monthly, every, annually)
+            if (tabId === 'monthly') {
+                monthly();
+            } else if (tabId === 'every') {
+                every();
+            } else if (tabId === 'annually') {
+                annually();
+            }
+        }
+
+        function monthly() {
+            var first = document.getElementById("first");
+            var seconds = document.getElementById("seconds");
+            var third = document.getElementById("third");
+            first.innerHTML="$0";
+            seconds.innerHTML="$29.99";
+            third.innerHTML="$39.99";
+        }
+
+        function every() {
+            var first = document.getElementById("first");
+            var seconds = document.getElementById("seconds");
+            var third = document.getElementById("third");
+            first.innerHTML="$0";
+            seconds.innerHTML="$89.99";
+            third.innerHTML="$149.99";
+        }
+
+        function annually() {
+            var first = document.getElementById("first");
+            var seconds = document.getElementById("seconds");
+            var third = document.getElementById("third");
+            first.innerHTML="$0";
+            seconds.innerHTML="$359.99";
+            third.innerHTML="$599.99";
+        }
+    </script>
+</body>
+</html>

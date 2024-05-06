@@ -1,0 +1,575 @@
+/* Default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.navbar {
+    background-color: #333;
+    color: white;
+    padding: 10px 20px;
+}
+
+.navbar1 {
+    display: flex;
+    justify-content: space-between; /* Spacing between elements */
+    align-items: center;
+}
+.navbar1 :hover {
+    color: #fff;
+}
+
+.companylogo img {
+    height: 50px;
+    width: auto;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    margin-right: 20px; 
+    justify-content: space-between;
+    margin-left: 60px;
+}
+
+#canvas1 {
+    width: 99.9%;
+    height: 500px;
+    background: black;
+    position: absolute;
+    top: 75px;
+    left: 0;
+    opacity: 1;
+}
+
+.text1 h1{
+    color: #fff;
+    position: absolute;
+    top: 250px;
+    left: 50px;
+    font-size: 30px;
+}
+
+
+.image1 img {
+    position: absolute;
+    top: 120px;
+    left: 700px;
+    width: 50%;
+}
+
+.image2 img {
+    position: absolute;
+    top: 300px;
+    left: 550px;
+    width: 20%;
+    position: relative;
+}
+
+.text2 {
+    font-size: 30px;
+    text-align: center;
+    margin-top: 350px;
+}
+
+.videocontrol {
+    display: flex;
+    flex-direction: row;
+}
+
+.vodeopanel {
+    flex: 1;
+    margin-right: 10px;
+}
+
+.vodeopanel video {
+    width: 100%;
+    height: 400px;
+    border: 2px solid #000;
+}
+
+.vodeopanel1 {
+    flex: 1;
+    margin-left: 10px;
+    border: solid black 1px;
+    height: 450px;
+    background-color: aqua;
+    width: 100%;
+    font-size: 300px;
+    text-align: center;
+    justify-content: center;
+    display: flex;
+}
+
+.vodeopanelbutton button {
+    color: #fff;
+    background-color: black;
+    width: 30%;
+    height: 50px;
+    margin-left: 10%;
+    font-size: 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    justify-content: space-around;
+}
+
+#voiumedisplay5 {
+    border: solid black 1px;
+    width: 49.40%;
+    height: 150px;
+}
+
+.forminput {
+    width: 100%;
+    color: blue;
+}
+
+.mint {
+    font-size: 20px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    text-align: center;
+}
+.videocontrol10 {
+    font-size: 100px;
+    text-align: center;
+    background-color: aquamarine;
+    border: 1px solid #000; /* Border on the right side */
+    width: 49.50%;
+    height: 150px;
+    position: relative;
+    position: absolute;
+    top: 1140px;
+    left: 745px;
+    transition: transform 0.5s; /* Transition for transform property */
+    display: inline;
+}
+.div3 {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border: solid black 1px;
+    margin-top: 3.20%;
+    position: relative; /* Ensure relative positioning for z-index */
+}
+
+.div1, .div2, .div4 {
+    position: relative;
+    width: 300px; /* Set a fixed width for the image containers */
+    height: 200px; /* Set a fixed height for the image containers */
+    overflow: hidden; /* Ensure overflow content is hidden */
+    display: flex; /* Use flexbox for image centering */
+    justify-content: center; /* Center the image horizontally */
+    align-items: center; /* Center the image vertically */
+    z-index: 1; /* Ensure image stays below overlay */
+}
+
+.div1 img, .div2 img, .div4 img {
+    width: 100%; /* Make sure the image fills the container */
+    height: 100%; /* Make sure the image fills the container */
+    object-fit: cover; /* Maintain aspect ratio and fill container */
+}
+
+.overlay {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 255, 0.981);
+    color: white; 
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.3s ease, top 0.3s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+}
+
+.div1:hover .overlay, .div2:hover .overlay, .div4:hover .overlay {
+    opacity: 1; /* Show overlay on hover */
+    top: 0; /* Slide in from the top */
+}
+
+
+.overlay p {
+    margin: 0; /* Remove default margin */
+}
+
+.imaged{
+    border: #000 solid 1px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
+}
+.imagede img{
+    border:  solid 1px black;
+    width: 800px;
+    height: 500px;
+}
+
+.div5 {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border: solid black 1px;
+    margin-top: 3.20%;
+    position: relative; 
+}
+
+.div6,
+.div7,
+.div8,
+.div9 {
+    flex-basis: 23%; /* Adjust as needed */
+    margin: 0 1%; /* Adjust as needed */
+    position: relative;
+}
+
+
+
+.overlay p {
+    text-align: center;
+    padding: 10px;
+    font-size: 15px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.div6:hover .overlay {
+    opacity: 1;
+}
+
+.div6 img,
+.div7 img,
+.div8 img,
+.div9 img {
+    width: 100%;
+    height: 200px;
+    border:  solid black 1px;
+}
+
+.div6 p,
+.div7 p,
+.div8 p,
+.div9 p {
+    text-align: center;
+    padding: 10px;
+}
+.text6{
+    font-size: 25px;
+    text-align: center;
+}
+.Plans{
+    font-size: 55px;
+    text-align: center;  
+}
+.text7{
+    font-size: 20px;
+    text-align: center;  
+    font-family: Arial, Helvetica, sans-serif; 
+    color: #000;
+}
+.tabledf {
+    display: flex;
+    border: solid black 1px;
+    margin-top: 10px; /* Adding 10 pixels margin from the top */
+    /* padding:10px; */
+}
+
+.tabledf table {
+    border: #000 solid 1px;
+    font-size: 25px;
+    padding: 10px;
+}
+
+table img {
+    width: 100%;
+}
+#image23{
+    color: #000;
+    background-color: #fff;
+    width: 450px;
+    height: 310px;
+    margin-top: 3.50%;
+    font-size: 100px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+th, td {
+    padding-top: 25px;
+    background-color: blue;
+    padding: 10px;
+    color: #fff;
+}
+
+.off {
+    float: right;
+    border-radius: 20%;
+    background-color: red;
+    width: 20%;
+}
+td button {
+    background-color: #4CAF50; /* Green */
+    width: 100px;
+    height: 50px;
+    border: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    justify-content: center;
+}
+td button a{
+    text-decoration: none;
+    color: white;
+}
+td p {
+    color: #000;
+    background-color: #fff;
+    width: 450px;
+    height: 310px;
+    margin-top: 3.50%;
+    font-size: 200px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+th button {
+    font-size: 20px;
+    background-color: red;
+    color: #000;
+}
+.icon10 i{
+    font-size: 30px;
+    margin-left: 2%;
+    color: rgb(226, 4, 255);
+}
+.imagetopdf{
+    display: flex;
+    margin-top: 5%;
+}
+.image-to-pdf1{
+    border:  solid 1px black;
+    width: 50%;
+    height: 200px;
+    text-align: center;
+    font-size: 20px;
+}
+.img23{
+    border:  solid 1px black;
+    width: 50%;
+    height: 200px;
+    text-align: center;
+    font-size: 100px;
+    background-color: #4CAF50;
+    margin-left: 2%;
+}
+.img23 h1{
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+ font-size: 150px;
+}
+.slider-container {
+    position: relative;
+    max-width: 600px;
+    margin: auto;
+    overflow: hidden;
+    border: 2px solid #ccc; /* Add border */
+  }
+  
+  .slider {
+    display: flex;
+    transition: transform 0.5s ease;
+    border-bottom: 2px solid #ccc; /* Add border */
+  }
+  
+  .slide {
+    width: 180%;
+    height: 200px; /* Specify height */
+  }
+  .button12 {
+    position: relative;
+    display: flex;
+    justify-content: space-between; /* Align items on the left and right */
+    width: 100%; /* Make sure the container spans the full width */
+}
+
+.button12 button {
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    font-size: 20px;
+    z-index: 100;
+}
+
+#prev {
+    order: 1; /* Arrange the left button */
+}
+
+#next {
+    order: 2; /* Arrange the right button */
+}
+
+
+/* Media queries for responsiveness */
+@media only screen and (max-width: 768px) {
+    /* Adjust styles for smaller screens */
+    .companylogo img {
+        height: 40px;
+    }
+    .navbar1 {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+    .navbar1 :hover {
+        color: #fff;
+    }
+    
+    .companylogo img {
+        height: 50px;
+        width: auto;
+    }
+
+    .nav-links a {
+        margin-right: 10px; /* Reduce spacing between links */
+    }
+    .div1 img, .div2 img, .div4 img {
+        width: 100%; /* Make sure the image fills the container */
+        height: 100%; /* Make sure the image fills the container */
+        object-fit: cover; /* Maintain aspect ratio and fill container */
+    }
+
+    .image1 img {
+        width: 80%;
+        height: 150px;
+        top: 180px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    #canvas1 {
+        width: 99.9%;
+        height: 500px;
+        background: black;
+        position: absolute;
+        top: 150px;
+        left: 0;
+        opacity: 1;
+    }
+
+    .image2 img {
+        width: 50%;
+        top: 80px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    .vodeopanel1 {
+        flex: 1;
+        margin-left: 10px;
+        border: solid black 1px;
+        height: 200px;
+        background-color: aqua;
+        font-size: 100px;
+        text-align: center;
+        justify-content: center;
+        display: flex;
+    }
+    .videocontrol10 {
+        font-size: 100px;
+        text-align: center;
+        background-color: aquamarine;
+        border: 1px solid #000; /* Border on the right side */
+        width: 47%;
+        height: 150px;
+        position: absolute;
+        top: 975px;
+        left: 225px;
+        display: inline;
+        transition: transform 0.5s; /* Transition for transform property */
+        display: none;
+    }
+    
+    .div3 {
+        flex-direction: column; /* Change to column layout for smaller screens */
+        align-items: center; /* Center items vertically */
+    }
+
+    .div1, .div2, .div4 {
+        width: 80%; /* Adjust width for smaller screens */
+        margin-bottom: 20px; /* Add margin between items */
+    }
+    .imagetopdf{
+        display: flex;
+        margin-top: 15%;
+        flex-direction: column;
+    }
+    .image-to-pdf1{
+        border:  solid 1px black;
+        width: 100%;
+        height: 300px;
+        text-align: center;
+        font-size: 20px;
+    }
+    .img23{
+        border:  solid 1px black;
+        width: 100%;
+        height: 200px;
+        text-align: center;
+        font-size: 100px;
+        background-color: #4CAF50;
+        margin-left: 2%;
+        margin-top: 10%;
+    }
+    .imaged{
+        border: #000 solid 1px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 20px;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        flex-direction: column;
+    
+    }
+    .imagede img{
+        border:  solid 1px black;
+        width: 100%;
+        height: 500px;
+    }
+    .div5 {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        border: solid black 1px;
+        margin-top: 3.20%;
+        position: relative;
+        flex-direction: column; 
+    }
+    
+    .div6,
+    .div7,
+    .div8,
+    .div9 {
+        flex-basis: 23%; /* Adjust as needed */
+        margin: 0 1%; /* Adjust as needed */
+        position: relative;
+    }
+    .tabledf {
+        display: flex;
+        border: solid black 1px;
+        margin-top: 10px; /* Adding 10 pixels margin from the top */
+        /* padding:10px; */
+        flex-direction: column;
+    }
+    #image123659{
+  width: 450px;;
+    }
+}

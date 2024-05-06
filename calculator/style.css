@@ -1,0 +1,59 @@
+html, body {
+  font-family: 'Roboto', sans-serif; 
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+}
+
+.container{
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  border: solid 1px black;
+  background-color: aqua;
+  width: 100%;
+}
+.button{
+  width: 66px;
+  padding: 20px;
+  margin: 0 3px;
+  border: 2px solid rgb(0, 0, 0);
+  border-radius: 9px;
+  cursor: pointer;
+}
+
+.row{
+  margin: 8px 0;
+}
+.row input{
+  width: 291px;
+  font-size: 20px;
+    margin: 0;
+    padding: 10px 0px;
+    border: 2px solid rgb(255, 0, 0);
+    border-radius: 5px;
+}
+.text-center{
+  text-align: center;
+}
+
+.bg-red{
+  background: rgb(0, 0, 0);
+}
+
+.mx-auto{
+  margin: auto;
+}
+
+.flex{
+  display:flex;
+} 
+.flex-col{
+  flex-direction: column;
+}
+
+.items-center{
+  align-items: center;
+}
